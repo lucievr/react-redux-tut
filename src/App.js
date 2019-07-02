@@ -1,16 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { increment } from "./actions/index";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "./actions/index";
 
 const App = () => {
   const counter = useSelector(state => state.counter);
   const isLogged = useSelector(state => state.isLogged);
+  const dispatch = useDispatch();
 
   return (
     <div>
       <h1>Counter {counter}</h1>
-      <button>+</button>
-      <button>-</button>
+      <button onClick={() => dispatch(increment(5))}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
       {isLogged ? <h3>Private information for the user</h3> : ""}
     </div>
   );

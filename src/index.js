@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 import App from "./App";
-import { createStore } from 'redux';
-import allReducers from './reducers/index';
-import { Provider } from 'react-redux';
+import { createStore } from "redux";
+import allReducers from "./reducers/index";
+import { Provider } from "react-redux";
 
 //STORE --> GLOBALIZED STATE
 
@@ -47,15 +47,15 @@ import { Provider } from 'react-redux';
 // store.dispatch(decrement());     -1
 
 const myStore = createStore(
-    allReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 ReactDOM.render(
-<Provider store={myStore}>
-<App />
-</Provider>, 
-document.getElementById("app")
+  <Provider store={myStore}>
+    <App />
+  </Provider>,
+  document.getElementById("app")
 );
 
 module.hot.accept();
